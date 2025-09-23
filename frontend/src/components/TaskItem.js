@@ -1,24 +1,10 @@
 import React from 'react';
+import { api } from '../api';
 
 const TaskItem = ({ task, onTaskUpdated, onTaskDeleted, onEditTask }) => {
   const handleToggleComplete = async () => {
     try {
-      const response = await fetch(`/api/tasks/${task.id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          completed: !task.completed
-        }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to update task');
-      }
-
-      const updatedTask = await response.json();
+      const updatedTask = await api.updateTask(task.id, { completed: !task.completed });
       onTaskUpdated(updatedTask);
     } catch (err) {
       alert('Error updating task: ' + err.message);
@@ -31,15 +17,7 @@ const TaskItem = ({ task, onTaskUpdated, onTaskDeleted, onEditTask }) => {
     }
 
     try {
-      const response = await fetch(`/api/tasks/${task.id}`, {
-        method: 'DELETE',
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to delete task');
-      }
-
+      await api.deleteTask(task.id);
       onTaskDeleted(task.id);
     } catch (err) {
       alert('Error deleting task: ' + err.message);

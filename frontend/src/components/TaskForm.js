@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { api } from '../api';
 
 const TaskForm = ({ onTaskCreated, editingTask, onTaskUpdated, onCancelEdit }) => {
   const [title, setTitle] = useState(editingTask ? editingTask.title : '');
@@ -24,42 +25,12 @@ const TaskForm = ({ onTaskCreated, editingTask, onTaskUpdated, onCancelEdit }) =
       };
 
       if (editingTask) {
-        // Update existing task
-        const response = await fetch(`/api/tasks/${editingTask.id}`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(taskData),
-        });
-
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.error || 'Failed to update task');
-        }
-
-        const updatedTask = await response.json();
+        const updatedTask = await api.updateTask(editingTask.id, taskData);
         onTaskUpdated(updatedTask);
         onCancelEdit();
       } else {
-        // Create new task
-        const response = await fetch('/api/tasks', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(taskData),
-        });
-
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.error || 'Failed to create task');
-        }
-
-        const newTask = await response.json();
+        const newTask = await api.createTask(taskData);
         onTaskCreated(newTask);
-        
-        // Reset form
         setTitle('');
         setDescription('');
       }

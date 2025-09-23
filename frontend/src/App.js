@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
+import { api } from './api';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -14,13 +15,7 @@ function App() {
       setLoading(true);
       setError('');
       
-      const response = await fetch('/api/tasks');
-      
-      if (!response.ok) {
-        throw new Error('Failed to fetch tasks');
-      }
-      
-      const tasksData = await response.json();
+      const tasksData = await api.listTasks();
       setTasks(tasksData);
     } catch (err) {
       setError('Error loading tasks: ' + err.message);
@@ -36,7 +31,7 @@ function App() {
 
   // Handle new task creation
   const handleTaskCreated = (newTask) => {
-    setTasks(prevTasks => [...prevTasks, newTask]);
+  setTasks(prevTasks => [...prevTasks, newTask]);
   };
 
   // Handle task updates
