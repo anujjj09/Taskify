@@ -1,7 +1,7 @@
 [build]
   base = "frontend"
   command = "npm run build"
-  publish = "frontend/build"
+  publish = "build"
 
 [build.environment]
   # Set this in Netlify UI for security instead of here in production
