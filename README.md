@@ -2,6 +2,16 @@
 
 A clean, beginner-friendly full-stack to-do list application built with React frontend and Node.js/Express backend.
 
+## 🌐 Live Demo
+**[🚀 Try Taskify Live](https://kaleidoscopic-sopapillas-e4695c.netlify.app/)**
+
+[![Netlify Status](https://img.shields.io/badge/Netlify-Live-success?style=flat&logo=netlify)](https://kaleidoscopic-sopapillas-e4695c.netlify.app/)
+[![Backend Status](https://img.shields.io/badge/Render-Live-success?style=flat&logo=render)](https://taskify1-lwlb.onrender.com/api/health)
+
+- **Frontend**: Deployed on Netlify
+- **Backend**: Deployed on Render  
+- **Status**: ✅ Fully functional full-stack application
+
 ## 🚀 Features
 
 - ✅ Add new tasks with title and description
@@ -139,6 +149,37 @@ curl -X PUT http://localhost:5001/api/tasks/1 \
 **Delete a task:**
 ```bash
 curl -X DELETE http://localhost:5001/api/tasks/1
+```
+
+## 🚀 Deployment
+
+The application is deployed using modern cloud platforms:
+
+### Production URLs
+- **Frontend**: https://kaleidoscopic-sopapillas-e4695c.netlify.app/
+- **Backend**: https://taskify1-lwlb.onrender.com
+
+### Deployment Stack
+- **Frontend**: Netlify (Static Site Hosting)
+- **Backend**: Render (Node.js Web Service)
+- **Database**: JSON file storage (Note: ephemeral on Render)
+
+### Deployment Steps
+1. **Backend (Render)**:
+   - Connected to GitHub repository
+   - Root Directory: `backend`
+   - Build Command: `npm install`
+   - Start Command: `node server.js`
+   - Environment Variables: `FRONTEND_ORIGIN` set to Netlify URL
+
+2. **Frontend (Netlify)**:
+   - Connected to GitHub repository
+   - Base Directory: `frontend`
+   - Build Command: `npm run build`
+   - Publish Directory: `build`
+   - Environment Variables: `REACT_APP_API_URL` set to Render backend URL
+
+## 📚 Learning Concepts
 ```
 
 ## 🎯 Learning Objectives
