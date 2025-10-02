@@ -1,6 +1,4 @@
-// Central API base & helper functions
-// Allows switching between local dev (proxy) and deployed backend via REACT_APP_API_URL
-
+// API helper functions
 const API_BASE = process.env.REACT_APP_API_URL || '';
 
 async function request(path, options = {}) {

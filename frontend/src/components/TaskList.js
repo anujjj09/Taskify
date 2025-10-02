@@ -26,7 +26,7 @@ const TaskList = ({ tasks, loading, onTaskUpdated, onTaskDeleted, onEditTask }) 
           )}
         </div>
         {totalCount > 0 && (
-          <div className="progress-bar" aria-label="Task completion progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow={completionPercent} role="progressbar">
+          <div className="progress-bar">
             <div className="progress-fill" style={{ width: `${completionPercent}%` }} />
           </div>
         )}

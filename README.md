@@ -1,33 +1,54 @@
-# Taskify - Simple To-Do List App
+# Taskify - Todo App
 
-A clean, beginner-friendly full-stack to-do list application built with React frontend and Node.js/Express backend.
+My 5th semester web development project. Built with React and Node.js for learning full-stack development.
 
-## 🌐 Live Demo
-**[🚀 Try Taskify Live](https://kaleidoscopic-sopapillas-e4695c.netlify.app/)**
+**Live Demo:** https://kaleidoscopic-sopapillas-e4695c.netlify.app/
 
-[![Netlify Status](https://img.shields.io/badge/Netlify-Live-success?style=flat&logo=netlify)](https://kaleidoscopic-sopapillas-e4695c.netlify.app/)
-[![Backend Status](https://img.shields.io/badge/Render-Live-success?style=flat&logo=render)](https://taskify1-lwlb.onrender.com/api/health)
+## Features
 
-- **Frontend**: Deployed on Netlify
-- **Backend**: Deployed on Render  
-- **Status**: ✅ Fully functional full-stack application
+- Add, edit, delete tasks
+- Mark as complete/incomplete  
+- Responsive design
+- REST API backend
 
-## 🚀 Features
+## Tech Stack
 
-- ✅ Add new tasks with title and description
-- ✏️ Edit existing tasks
-- 🗑️ Delete tasks with confirmation
-- ☑️ Mark tasks as complete/incomplete
-- 💾 Persistent JSON file storage
-- 📱 Responsive design for mobile and desktop
-- 🎨 Clean, minimalist user interface
+**Frontend:** React, CSS, JavaScript  
+**Backend:** Node.js, Express  
+**Database:** JSON file storage
 
-## 🛠️ Tech Stack
+## Setup
 
-**Frontend:**
-- React 18
-- JavaScript (ES6+)
-- CSS3
+1. Clone repo
+   ```bash
+   git clone <repo-url>
+   cd Taskify
+   ```
+
+2. Backend setup
+   ```bash
+   cd backend
+   npm install
+   npm start
+   ```
+
+3. Frontend setup  
+   ```bash
+   cd frontend
+   npm install
+   npm start
+   ```
+
+4. Open http://localhost:3000
+
+## What I Learned
+
+- React hooks (useState, useEffect)
+- Express.js API development
+- Frontend-backend communication
+- Deployment (Netlify + Render)
+
+Made for CSE Web Dev course
 - HTML5
 
 **Backend:**

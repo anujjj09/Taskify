@@ -46,6 +46,5 @@ app.use('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Taskify server running on port ${PORT}`);
-  console.log(`📊 Health: /api/health | 📝 Tasks: /api/tasks`);
+  console.log(`Server running on port ${PORT}`);
 });

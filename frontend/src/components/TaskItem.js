@@ -37,7 +37,6 @@ const TaskItem = ({ task, onTaskUpdated, onTaskDeleted, onEditTask }) => {
             type="checkbox"
             checked={task.completed}
             onChange={handleToggleComplete}
-            aria-label={`Mark task "${task.title}" as ${task.completed ? 'incomplete' : 'complete'}`}
           />
         </div>
         
@@ -68,14 +67,12 @@ const TaskItem = ({ task, onTaskUpdated, onTaskDeleted, onEditTask }) => {
         <button
           className="btn btn-small btn-secondary"
           onClick={() => onEditTask(task)}
-          aria-label={`Edit task "${task.title}"`}
         >
           Edit
         </button>
         <button
           className="btn btn-small btn-danger"
           onClick={handleDelete}
-          aria-label={`Delete task "${task.title}"`}
         >
           Delete
         </button>

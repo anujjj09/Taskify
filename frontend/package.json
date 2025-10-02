@@ -2,6 +2,7 @@
   "name": "taskify-frontend",
   "version": "1.0.0",
   "description": "Frontend for Taskify - Simple To-Do List App",
+  "author": "Anuj Sharma",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
