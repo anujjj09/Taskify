@@ -4,9 +4,6 @@ import TaskList from './components/TaskList';
 import { api } from './api';
 
 function App() {
-  // Force rebuild for environment variable
-  console.log('API URL:', process.env.REACT_APP_API_URL);
-
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
